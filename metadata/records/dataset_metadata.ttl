@@ -20,6 +20,7 @@
     dcat:landingPage <https://rishiraghavendran.github.io/FAIR-Meteorites-group1/> ;
     dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
     dct:rights "Publicly accessible without authentication. The source catalogue specifies no licence; public access does not imply unrestricted reuse." ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     dct:source <https://data.nasa.gov/dataset/meteorite-landings> ;
     prov:wasDerivedFrom <https://data.nasa.gov/dataset/meteorite-landings> ;
     dct:conformsTo <https://w3id.org/FAIR-course-UT/2026/group01/ont> ;
