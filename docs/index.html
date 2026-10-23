@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NASA Meteorite Landings: Witnessed Falls (FAIRified)</title>
+  <meta name="description" content="A curated subset of 1,107 witnessed meteorite falls from the NASA Open Data Portal, transformed into a validated RDF knowledge graph.">
+  <link rel="alternate" type="text/turtle" href="https://w3id.org/FAIR-course-UT/2026/group01/meta/dataset/nasa-meteorite-landings-witnessed-falls-fairified">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Dataset",
+    "@id": "https://w3id.org/FAIR-course-UT/2026/group01/meta/dataset/nasa-meteorite-landings-witnessed-falls-fairified",
+    "identifier": "https://w3id.org/FAIR-course-UT/2026/group01/meta/dataset/nasa-meteorite-landings-witnessed-falls-fairified",
+    "url": "https://w3id.org/FAIR-course-UT/2026/group01/meta/dataset/nasa-meteorite-landings-witnessed-falls-fairified",
+    "name": "NASA Meteorite Landings: Witnessed Falls (FAIRified)",
+    "description": "A curated subset of 1,107 witnessed meteorite falls from the NASA Open Data Portal, transformed into a validated RDF knowledge graph.",
+    "keywords": ["meteorites", "witnessed falls", "NASA", "planetary science", "RDF", "FAIR"],
+    "creator": [
+      {"@type": "Person", "name": "Rishi Raghavendran"},
+      {"@type": "Person", "name": "Kavisha Shah"}
+    ],
+    "publisher": {"@type": "Organization", "name": "University of Twente", "url": "https://www.utwente.nl/"},
+    "datePublished": "2026-10-18",
+    "isAccessibleForFree": true,
+    "conditionsOfAccess": "Publicly accessible without authentication. The source catalogue specifies no licence; public access does not imply unrestricted reuse.",
+    "isBasedOn": "https://data.nasa.gov/dataset/meteorite-landings",
+    "variableMeasured": ["meteorite name", "source identifier", "classification", "mass (grams)", "fall status", "fall year", "latitude", "longitude"],
+    "distribution": [
+      {
+        "@type": "DataDownload",
+        "name": "Meteorite Witnessed Falls - RDF/Turtle",
+        "contentUrl": "https://w3id.org/FAIR-course-UT/2026/group01/data/rdf",
+        "encodingFormat": "text/turtle",
+        "contentSize": "533367 B"
+      },
+      {
+        "@type": "DataDownload",
+        "name": "Meteorite Witnessed Falls - CSV",
+        "contentUrl": "https://w3id.org/FAIR-course-UT/2026/group01/data/csv",
+        "encodingFormat": "text/csv",
+        "contentSize": "55910 B"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 760px; margin: 2rem auto; padding: 0 16px; line-height: 1.6; color: #222; }
+    code { background: #f2f2f2; padding: 2px 5px; border-radius: 4px; word-break: break-all; }
+  </style>
+</head>
+<body>
+  <h1>NASA Meteorite Landings: Witnessed Falls (FAIRified)</h1>
+  <p>A curated subset of 1,107 witnessed meteorite falls from the NASA Open Data Portal, transformed into a validated RDF knowledge graph.</p>
+
+  <p><strong>Identifier:</strong> <code>https://w3id.org/FAIR-course-UT/2026/group01/meta/dataset/nasa-meteorite-landings-witnessed-falls-fairified</code></p>
+  <p><strong>Creators:</strong> Rishi Raghavendran, Kavisha Shah<br>
+     <strong>Publisher:</strong> University of Twente<br>
+     <strong>Published:</strong> 2026-10-18<br>
+     <strong>Access:</strong> Publicly accessible without authentication. The source catalogue specifies no licence; public access does not imply unrestricted reuse.</p>
+
+  <h2>Downloads</h2>
+  <ul>
+    <li><a href="https://w3id.org/FAIR-course-UT/2026/group01/data/rdf">RDF/Turtle (533 KB)</a></li>
+    <li><a href="https://w3id.org/FAIR-course-UT/2026/group01/data/csv">CSV (55 KB)</a></li>
+    <li><a href="https://w3id.org/FAIR-course-UT/2026/group01/ont">Ontology (OWL)</a></li>
+    <li><a href="https://raw.githubusercontent.com/rishiraghavendran/FAIR-Meteorites-group1/main/metadata/records/dataset_metadata.ttl">Dataset metadata (Turtle)</a></li>
+  </ul>
+
+  <h2>Source</h2>
+  <p>Derived from <a href="https://data.nasa.gov/dataset/meteorite-landings">NASA Open Data Portal – Meteorite Landings</a>.</p>
+</body>
+</html>
