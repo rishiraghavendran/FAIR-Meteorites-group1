@@ -10,6 +10,8 @@
     dct:creator "Rishi Raghavendran", "Kavisha Shah" ;
     dct:issued "2026-10-18"^^xsd:date ;
     prov:wasDerivedFrom <https://data.nasa.gov/dataset/meteorite-landings> ;
+    dcterms:source <https://data.nasa.gov/dataset/meteorite-landings> ;
+    prov:wasDerivedFrom <https://data.nasa.gov/dataset/meteorite-landings> ;
     dct:source <https://data.nasa.gov/dataset/meteorite-landings> ;
     ont:observationType "Witnessed Fall" ;
     dcat:distribution <https://w3id.org/FAIR-course-UT/2026/group01/meta/distribution/meteorite-witnessed-falls-original-csv>, <https://w3id.org/FAIR-course-UT/2026/group01/meta/distribution/meteorite-witnessed-falls-fairified-rdf> .
