@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/hp/ontologies/2026/9/untitled-ontology-4/"
+     xml:base="http://www.semanticweb.org/hp/ontologies/2026/9/untitled-ontology-4/"
+     xmlns:ont="https://w3id.org/FAIR-course-UT/2026/group01/ont#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://w3id.org/FAIR-course-UT/2026/group01/ont">
+        <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <terms:creator>Kavisha Rajesh Shah</terms:creator>
+        <terms:creator>Rishi Raghavendran</terms:creator>
+        <terms:description>A semantic model describing meteorites, their recorded classifications, and witnessed fall events in the curated NASA Meteorite Landings subset.</terms:description>
+        <terms:title>Meteorite Witnessed Falls Ontology</terms:title>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/FAIR-course-UT/2026/group01/ont#hasClassification -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/FAIR-course-UT/2026/group01/ont#hasClassification">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/FAIR-course-UT/2026/group01/ont#Meteorite"/>
+        <rdfs:range rdf:resource="https://w3id.org/FAIR-course-UT/2026/group01/ont#MeteoriteClassification"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/FAIR-course-UT/2026/group01/ont#hasFallEvent -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/FAIR-course-UT/2026/group01/ont#hasFallEvent">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/FAIR-course-UT/2026/group01/ont#Meteorite"/>
+        <rdfs:range rdf:resource="https://w3id.org/FAIR-course-UT/2026/group01/ont#FallEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/FAIR-course-UT/2026/group01/ont#hasMassGrams -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/FAIR-course-UT/2026/group01/ont#hasMassGrams">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/FAIR-course-UT/2026/group01/ont#Meteorite"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Recorded meteorite mass in grams.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/FAIR-course-UT/2026/group01/ont#meteoriteName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/FAIR-course-UT/2026/group01/ont#meteoriteName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/FAIR-course-UT/2026/group01/ont#Meteorite"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/FAIR-course-UT/2026/group01/ont#recordedFallStatus -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/FAIR-course-UT/2026/group01/ont#recordedFallStatus">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/FAIR-course-UT/2026/group01/ont#FallEvent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/FAIR-course-UT/2026/group01/ont#recordedFallYear -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/FAIR-course-UT/2026/group01/ont#recordedFallYear">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/FAIR-course-UT/2026/group01/ont#FallEvent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/FAIR-course-UT/2026/group01/ont#recordedLatitude -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/FAIR-course-UT/2026/group01/ont#recordedLatitude">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/FAIR-course-UT/2026/group01/ont#FallEvent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Recorded coordinate in decimal degrees.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/FAIR-course-UT/2026/group01/ont#recordedLongitude -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/FAIR-course-UT/2026/group01/ont#recordedLongitude">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/FAIR-course-UT/2026/group01/ont#FallEvent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Recorded coordinate in decimal degrees.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/FAIR-course-UT/2026/group01/ont#sourceIdentifier -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/FAIR-course-UT/2026/group01/ont#sourceIdentifier">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/FAIR-course-UT/2026/group01/ont#Meteorite"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/FAIR-course-UT/2026/group01/ont#FallEvent -->
+
+    <owl:Class rdf:about="https://w3id.org/FAIR-course-UT/2026/group01/ont#FallEvent">
+        <rdfs:comment>A recorded witnessed meteorite fall, described by its year and available landing coordinates.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/FAIR-course-UT/2026/group01/ont#Meteorite -->
+
+    <owl:Class rdf:about="https://w3id.org/FAIR-course-UT/2026/group01/ont#Meteorite">
+        <owl:disjointWith rdf:resource="https://w3id.org/FAIR-course-UT/2026/group01/ont#MeteoriteClassification"/>
+        <rdfs:comment>A meteorite represented by a record in the selected Meteorite Landings dataset.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/FAIR-course-UT/2026/group01/ont#MeteoriteClassification -->
+
+    <owl:Class rdf:about="https://w3id.org/FAIR-course-UT/2026/group01/ont#MeteoriteClassification">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment>A meteorite classification category recorded in the source recclass column, such as L5 or H5.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/FAIR-course-UT/2026/group01/ont#AachenExample -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/FAIR-course-UT/2026/group01/ont#AachenExample">
+        <rdf:type rdf:resource="https://w3id.org/FAIR-course-UT/2026/group01/ont#Meteorite"/>
+        <ont:hasClassification rdf:resource="https://w3id.org/FAIR-course-UT/2026/group01/ont#L5Example"/>
+        <ont:hasFallEvent rdf:resource="https://w3id.org/FAIR-course-UT/2026/group01/ont#AachenFallExample"/>
+        <ont:hasMassGrams rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">21</ont:hasMassGrams>
+        <ont:meteoriteName>Aachen</ont:meteoriteName>
+        <ont:sourceIdentifier>1</ont:sourceIdentifier>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/FAIR-course-UT/2026/group01/ont#AachenFallExample -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/FAIR-course-UT/2026/group01/ont#AachenFallExample">
+        <rdf:type rdf:resource="https://w3id.org/FAIR-course-UT/2026/group01/ont#FallEvent"/>
+        <ont:recordedFallStatus>Fell</ont:recordedFallStatus>
+        <ont:recordedFallYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1880</ont:recordedFallYear>
+        <ont:recordedLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50.775</ont:recordedLatitude>
+        <ont:recordedLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6.08333</ont:recordedLongitude>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/FAIR-course-UT/2026/group01/ont#L5Example -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/FAIR-course-UT/2026/group01/ont#L5Example">
+        <rdf:type rdf:resource="https://w3id.org/FAIR-course-UT/2026/group01/ont#MeteoriteClassification"/>
+        <skos:prefLabel xml:lang="en">L5</skos:prefLabel>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

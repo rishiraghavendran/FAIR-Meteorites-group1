@@ -1,0 +1,9 @@
+column,meaning,intended_datatype,unit_or_values,notes,missing_count
+id,Source identifier for the meteorite record,Text,No unit,Retained for traceability; not a persistent URI,0
+name,Recorded meteorite name,Text,No unit,,0
+recclass,Meteorite classification code,Category / text,"Examples: H5, L6, Stone-uncl",Classification definitions will be documented separately,0
+mass (g),Recorded meteorite mass,Decimal number,Grams,Blank means not recorded; never interpret as zero,32
+fall,Source status distinguishing falls from finds,Category / text,Fell in this subset,Subset selected using fall == 'Fell',0
+year,Recorded year of the witnessed fall,Year / whole number,AD/CE year,Nogata corrected to 861; Narni's 920 remains unresolved,0
+reclat,Recorded latitude of the meteorite location,Decimal number,Decimal degrees; range -90 to 90,Blank means unavailable; coordinate reference system needs verification,11
+reclong,Recorded longitude of the meteorite location,Decimal number,Decimal degrees; range -180 to 180,Blank means unavailable; coordinate reference system needs verification,11

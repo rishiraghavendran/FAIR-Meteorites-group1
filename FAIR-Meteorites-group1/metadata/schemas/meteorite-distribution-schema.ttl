@@ -1,0 +1,59 @@
+@prefix : <http://fairdatapoint.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ont: <https://w3id.org/FAIR-course-UT/2026/group01/ont#> .
+
+:Section1Group
+  a sh:PropertyGroup ;
+  rdfs:label "Section 1" ;
+  sh:order 0 .
+
+ont:DistributionShape
+  a sh:NodeShape ;
+  rdfs:label "Meteorite Distribution Schema" ;
+  dct:description "Metadata schema for the CSV and RDF distributions of the meteorite dataset." ;
+  sh:targetClass dcat:Distribution ;
+  sh:property [
+    sh:path dct:title ;
+    sh:name "Title" ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+    sh:order 0 ;
+    dash:editor dash:TextFieldEditor ;
+    sh:group :Section1Group
+  ] ;
+  sh:property [
+    sh:path dcat:downloadURL ;
+    sh:name "Download URL" ;
+    sh:nodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:pattern "^https://w3id\\.org/FAIR-course-UT/2026/group01/" ;
+    sh:order 1 ;
+    dash:editor dash:URIEditor ;
+    sh:group :Section1Group
+  ] ;
+  sh:property [
+    sh:path dct:format ;
+    sh:name "Format" ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+    sh:order 2 ;
+    dash:editor dash:TextFieldEditor ;
+    sh:group :Section1Group
+  ] ;
+  sh:property [
+    sh:path dct:license ;
+    sh:name "License" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 3 ;
+    dash:editor dash:URIEditor ;
+    sh:group :Section1Group
+  ] .
