@@ -7,7 +7,6 @@
 <https://w3id.org/FAIR-course-UT/2026/group01/meta/dataset/nasa-meteorite-landings-witnessed-falls-fairified> a dcat:Dataset ;
     dct:title "NASA Meteorite Landings: Witnessed Falls (FAIRified)" ;
     dct:description "A curated subset of 1,107 witnessed meteorite falls from the NASA Open Data Portal, transformed into a validated RDF knowledge graph." ;
-    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     dct:creator "Rishi Raghavendran", "Kavisha Shah" ;
     dct:issued "2026-10-18"^^xsd:date ;
     prov:wasDerivedFrom <https://data.nasa.gov/dataset/meteorite-landings> ;
