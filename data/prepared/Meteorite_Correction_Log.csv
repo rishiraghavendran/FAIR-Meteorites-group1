@@ -1,0 +1,4 @@
+id,name,field,old_value,new_value,reason,source,checked_at_utc
+53653,Mason Gully,reclat,0,,Source lists coordinates as unknown; removed placeholder.,https://www.lpi.usra.edu/meteor/metbull.php?code=53653,2026-10-05T14:28:55.920549+00:00
+53653,Mason Gully,reclong,0,,Source lists coordinates as unknown; removed placeholder.,https://www.lpi.usra.edu/meteor/metbull.php?code=53653,2026-10-05T14:28:55.923522+00:00
+16988,Nogata,year,860,861,Year reconciled with the Meteoritical Bulletin Database.,https://www.lpi.usra.edu/meteor/metbull.php?code=16988,2026-10-05T14:28:55.925424+00:00
