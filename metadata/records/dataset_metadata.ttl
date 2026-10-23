@@ -13,3 +13,20 @@
     prov:wasDerivedFrom <https://data.nasa.gov/dataset/meteorite-landings> ;
     ont:observationType "Witnessed Fall" ;
     dcat:distribution <https://w3id.org/FAIR-course-UT/2026/group01/meta/distribution/meteorite-witnessed-falls-original-csv>, <https://w3id.org/FAIR-course-UT/2026/group01/meta/distribution/meteorite-witnessed-falls-fairified-rdf> .
+<https://w3id.org/FAIR-course-UT/2026/group01/meta/distribution/meteorite-witnessed-falls-original-csv>
+    a dcat:Distribution ;
+    dct:title "Meteorite Witnessed Falls - CSV" ;
+    dcat:downloadURL
+        <https://w3id.org/FAIR-course-UT/2026/group01/data/csv> ;
+    dct:format "text/csv" ;
+    dcat:mediaType
+        <https://www.iana.org/assignments/media-types/text/csv> .
+
+<https://w3id.org/FAIR-course-UT/2026/group01/meta/distribution/meteorite-witnessed-falls-fairified-rdf>
+    a dcat:Distribution ;
+    dct:title "Meteorite Witnessed Falls - RDF/Turtle" ;
+    dcat:downloadURL
+        <https://w3id.org/FAIR-course-UT/2026/group01/data/rdf> ;
+    dct:format "text/turtle" ;
+    dcat:mediaType
+        <https://www.iana.org/assignments/media-types/text/turtle> .
