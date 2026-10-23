@@ -1,7 +1,14 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 
-<https://w3id.org/FAIR-course-UT/2026/group01/meta/distribution/meteorite-witnessed-falls-original-csv> a dcat:Distribution ;
-    dct:title "Meteorite Witnessed Falls - Original CSV" ;
-    dcat:downloadURL <https://w3id.org/FAIR-course-UT/2026/group01/data/csv> ;
-    dct:format "text/csv" .
+<https://w3id.org/FAIR-course-UT/2026/group01/meta/distribution/meteorite-witnessed-falls-original-csv>
+    a dcat:Distribution ;
+    dct:title "Meteorite Witnessed Falls - CSV" ;
+    dcat:downloadURL
+        <https://w3id.org/FAIR-course-UT/2026/group01/data/csv> ;
+    dct:format "text/csv" ;
+    dcat:mediaType
+        <https://www.iana.org/assignments/media-types/text/csv> ;
+    dct:accessRights
+        <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+    dct:rights "Publicly accessible without authentication. Source reuse rights are unspecified; no additional licence is asserted for the source-derived data." .
