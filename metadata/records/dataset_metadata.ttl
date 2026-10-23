@@ -1,38 +1,52 @@
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix ont: <https://w3id.org/FAIR-course-UT/2026/group01/ont#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat:   <http://www.w3.org/ns/dcat#> .
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix ont:    <https://w3id.org/FAIR-course-UT/2026/group01/ont#> .
+@prefix prov:   <http://www.w3.org/ns/prov#> .
+@prefix schema: <http://schema.org/> .
 
-<https://w3id.org/FAIR-course-UT/2026/group01/meta/dataset/nasa-meteorite-landings-witnessed-falls-fairified> a dcat:Dataset ;
-    dct:title "NASA Meteorite Landings: Witnessed Falls (FAIRified)" ;
-    dct:description "A curated subset of 1,107 witnessed meteorite falls from the NASA Open Data Portal, transformed into a validated RDF knowledge graph." ;
-    dct:creator "Rishi Raghavendran", "Kavisha Shah" ;
+<https://w3id.org/FAIR-course-UT/2026/group01/meta/dataset/nasa-meteorite-landings-witnessed-falls-fairified>
+    a dcat:Dataset ;
+    dct:identifier "https://w3id.org/FAIR-course-UT/2026/group01/meta/dataset/nasa-meteorite-landings-witnessed-falls-fairified"^^xsd:anyURI ;
+    dct:title "NASA Meteorite Landings: Witnessed Falls (FAIRified)"@en ;
+    dct:description "A curated subset of 1,107 witnessed meteorite falls from the NASA Open Data Portal, transformed into a validated RDF knowledge graph."@en ;
+    dcat:keyword "meteorites"@en, "witnessed falls"@en, "NASA"@en, "planetary science"@en, "RDF"@en, "FAIR"@en ;
     dct:issued "2026-10-18"^^xsd:date ;
-    prov:wasDerivedFrom <https://data.nasa.gov/dataset/meteorite-landings> ;
-    dcterms:source <https://data.nasa.gov/dataset/meteorite-landings> ;
-    prov:wasDerivedFrom <https://data.nasa.gov/dataset/meteorite-landings> ;
+    dct:creator
+        [ a foaf:Person ; foaf:name "Rishi Raghavendran" ] ,
+        [ a foaf:Person ; foaf:name "Kavisha Shah" ] ;
+    dct:publisher [ a foaf:Organization ; foaf:name "University of Twente" ; foaf:homepage <https://www.utwente.nl/> ] ;
+    dcat:landingPage <https://rishiraghavendran.github.io/FAIR-Meteorites-group1/> ;
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+    dct:rights "Publicly accessible without authentication. The source catalogue specifies no licence; public access does not imply unrestricted reuse." ;
     dct:source <https://data.nasa.gov/dataset/meteorite-landings> ;
+    prov:wasDerivedFrom <https://data.nasa.gov/dataset/meteorite-landings> ;
+    dct:conformsTo <https://w3id.org/FAIR-course-UT/2026/group01/ont> ;
+    prov:wasAttributedTo
+        [ a prov:Agent ; foaf:name "Rishi Raghavendran" ] ,
+        [ a prov:Agent ; foaf:name "Kavisha Shah" ] ;
+    prov:generatedAtTime "2026-10-18T00:00:00Z"^^xsd:dateTime ;
     ont:observationType "Witnessed Fall" ;
-    dcat:distribution <https://w3id.org/FAIR-course-UT/2026/group01/meta/distribution/meteorite-witnessed-falls-original-csv>, <https://w3id.org/FAIR-course-UT/2026/group01/meta/distribution/meteorite-witnessed-falls-fairified-rdf> .
+    schema:variableMeasured "meteorite name", "source identifier", "classification", "mass (grams)", "fall status", "fall year", "latitude", "longitude" ;
+    dcat:distribution
+        <https://w3id.org/FAIR-course-UT/2026/group01/meta/distribution/meteorite-witnessed-falls-original-csv> ,
+        <https://w3id.org/FAIR-course-UT/2026/group01/meta/distribution/meteorite-witnessed-falls-fairified-rdf> .
+
 <https://w3id.org/FAIR-course-UT/2026/group01/meta/distribution/meteorite-witnessed-falls-original-csv>
     a dcat:Distribution ;
-    dct:title "Meteorite Witnessed Falls - CSV" ;
-    dcat:downloadURL
-        <https://w3id.org/FAIR-course-UT/2026/group01/data/csv> ;
+    dct:title "Meteorite Witnessed Falls - CSV"@en ;
+    dcat:accessURL <https://w3id.org/FAIR-course-UT/2026/group01/data/csv> ;
+    dcat:downloadURL <https://w3id.org/FAIR-course-UT/2026/group01/data/csv> ;
     dct:format "text/csv" ;
-    dcat:mediaType
-        <https://www.iana.org/assignments/media-types/text/csv> .
+    dcat:mediaType <https://www.iana.org/assignments/media-types/text/csv> ;
+    dcat:byteSize "55910"^^xsd:nonNegativeInteger .
 
 <https://w3id.org/FAIR-course-UT/2026/group01/meta/distribution/meteorite-witnessed-falls-fairified-rdf>
     a dcat:Distribution ;
-    dct:title "Meteorite Witnessed Falls - RDF/Turtle" ;
-    dcat:downloadURL
-        <https://w3id.org/FAIR-course-UT/2026/group01/data/rdf> ;
+    dct:title "Meteorite Witnessed Falls - RDF/Turtle"@en ;
+    dcat:accessURL <https://w3id.org/FAIR-course-UT/2026/group01/data/rdf> ;
+    dcat:downloadURL <https://w3id.org/FAIR-course-UT/2026/group01/data/rdf> ;
     dct:format "text/turtle" ;
-    dcat:mediaType
-        <https://www.iana.org/assignments/media-types/text/turtle> .
-<https://w3id.org/FAIR-course-UT/2026/group01/meta/dataset/nasa-meteorite-landings-witnessed-falls-fairified>
-    dct:accessRights
-        <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
-    dct:rights "Publicly accessible without authentication. The source catalogue specifies no licence; public access does not imply unrestricted reuse." .
+    dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> ;
+    dcat:byteSize "533367"^^xsd:nonNegativeInteger .
