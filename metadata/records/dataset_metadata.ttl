@@ -30,3 +30,7 @@
     dct:format "text/turtle" ;
     dcat:mediaType
         <https://www.iana.org/assignments/media-types/text/turtle> .
+<https://w3id.org/FAIR-course-UT/2026/group01/meta/dataset/nasa-meteorite-landings-witnessed-falls-fairified>
+    dct:accessRights
+        <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+    dct:rights "Publicly accessible without authentication. The source catalogue specifies no licence; public access does not imply unrestricted reuse." .
