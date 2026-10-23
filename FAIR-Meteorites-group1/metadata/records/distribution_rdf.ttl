@@ -1,8 +1,0 @@
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
-
-<https://w3id.org/FAIR-course-UT/2026/group01/meta/distribution/meteorite-witnessed-falls-fairified-rdf> a dcat:Distribution ;
-    dct:title "Meteorite Witnessed Falls - FAIRified RDF" ;
-    dcat:downloadURL <https://w3id.org/FAIR-course-UT/2026/group01/data/rdf> ;
-    dct:format "text/turtle" ;
-    dct:license <https://creativecommons.org/licenses/by/4.0/> .
