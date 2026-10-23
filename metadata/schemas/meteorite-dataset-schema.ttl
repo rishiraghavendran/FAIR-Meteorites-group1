@@ -11,89 +11,127 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 
 :Section1Group
-  a sh:PropertyGroup ;
-  rdfs:label "Section 1" ;
-  sh:order 0 .
+    a sh:PropertyGroup ;
+    rdfs:label "Section 1" ;
+    sh:order 0 .
 
 ont:DatasetShape
-  a sh:NodeShape ;
-  rdfs:label "Meteorite Dataset Schema" ;
-  dct:description "Metadata schema for the FAIRified NASA Meteorite Witnessed Falls dataset." ;
-  sh:targetClass dcat:Dataset ;
-  sh:property [
-    sh:path dct:title ;
-    sh:name "Title" ;
-    sh:nodeKind sh:Literal ;
-    sh:datatype xsd:string ;
-    sh:minCount 1 ;
-    sh:order 0 ;
-    dash:editor dash:TextFieldEditor ;
-    sh:group :Section1Group
-  ] ;
-  sh:property [
-    sh:path dct:description ;
-    sh:name "Description" ;
-    sh:nodeKind sh:Literal ;
-    sh:datatype xsd:string ;
-    sh:minCount 1 ;
-    sh:order 1 ;
-    dash:editor dash:TextAreaEditor ;
-    sh:group :Section1Group
-  ] ;
-  sh:property [
-    sh:path dct:license ;
-    sh:name "License" ;
-    sh:nodeKind sh:IRI ;
-    sh:minCount 1 ;
-    sh:order 2 ;
-    dash:editor dash:URIEditor ;
-    sh:group :Section1Group
-  ] ;
-  sh:property [
-    sh:path dct:creator ;
-    sh:name "Creator" ;
-    sh:nodeKind sh:Literal ;
-    sh:datatype xsd:string ;
-    sh:minCount 1 ;
-    sh:order 3 ;
-    dash:editor dash:TextFieldEditor ;
-    sh:group :Section1Group
-  ] ;
-  sh:property [
-    sh:path dct:issued ;
-    sh:name "Date Issued" ;
-    sh:nodeKind sh:Literal ;
-    sh:datatype xsd:date ;
-    sh:minCount 1 ;
-    sh:order 4 ;
-    dash:editor dash:TextAreaEditor ;
-    sh:group :Section1Group
-  ] ;
-  sh:property [
-    sh:path prov:wasDerivedFrom ;
-    sh:name "Source Data" ;
-    sh:nodeKind sh:IRI ;
-    sh:minCount 1 ;
-    sh:order 5 ;
-    dash:editor dash:URIEditor ;
-    sh:group :Section1Group
-  ] ;
-  sh:property [
-    sh:path ont:observationType ;
-    sh:name "Observation Type" ;
-    sh:nodeKind sh:Literal ;
-    sh:datatype xsd:string ;
-    sh:minCount 1 ;
-    sh:order 6 ;
-    dash:editor dash:TextFieldEditor ;
-    sh:group :Section1Group
-  ] ;
-  sh:property [
-    sh:path dcat:distribution ;
-    sh:name "Distribution" ;
-    sh:nodeKind sh:IRI ;
-    sh:minCount 2 ;
-    sh:order 7 ;
-    dash:editor dash:URIEditor ;
-    sh:group :Section1Group
-  ] .
+    a sh:NodeShape ;
+    rdfs:label "Meteorite Dataset Schema" ;
+    dct:description "Metadata schema for the FAIRified NASA Meteorite Witnessed Falls dataset." ;
+    sh:targetClass dcat:Dataset ;
+
+    # Require either a licence IRI or a non-empty rights statement.
+    sh:or (
+        [
+            sh:property [
+                sh:path dct:license ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI
+            ]
+        ]
+        [
+            sh:property [
+                sh:path dct:rights ;
+                sh:minCount 1 ;
+                sh:datatype xsd:string ;
+                sh:pattern "\\S"
+            ]
+        ]
+    ) ;
+
+    sh:property [
+        sh:path dct:title ;
+        sh:name "Title" ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:order 0 ;
+        dash:editor dash:TextFieldEditor ;
+        sh:group :Section1Group
+    ] ;
+
+    sh:property [
+        sh:path dct:description ;
+        sh:name "Description" ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:order 1 ;
+        dash:editor dash:TextAreaEditor ;
+        sh:group :Section1Group
+    ] ;
+
+    # Optional individually; the sh:or rule requires licence or rights.
+    sh:property [
+        sh:path dct:license ;
+        sh:name "License" ;
+        sh:nodeKind sh:IRI ;
+        sh:order 2 ;
+        dash:editor dash:URIEditor ;
+        sh:group :Section1Group
+    ] ;
+
+    sh:property [
+        sh:path dct:creator ;
+        sh:name "Creator" ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:order 3 ;
+        dash:editor dash:TextFieldEditor ;
+        sh:group :Section1Group
+    ] ;
+
+    sh:property [
+        sh:path dct:issued ;
+        sh:name "Date Issued" ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:date ;
+        sh:minCount 1 ;
+        sh:order 4 ;
+        dash:editor dash:TextAreaEditor ;
+        sh:group :Section1Group
+    ] ;
+
+    sh:property [
+        sh:path prov:wasDerivedFrom ;
+        sh:name "Source Data" ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ;
+        sh:order 5 ;
+        dash:editor dash:URIEditor ;
+        sh:group :Section1Group
+    ] ;
+
+    sh:property [
+        sh:path ont:observationType ;
+        sh:name "Observation Type" ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:order 6 ;
+        dash:editor dash:TextFieldEditor ;
+        sh:group :Section1Group
+    ] ;
+
+    sh:property [
+        sh:path dcat:distribution ;
+        sh:name "Distribution" ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 2 ;
+        sh:order 7 ;
+        dash:editor dash:URIEditor ;
+        sh:group :Section1Group
+    ] ;
+
+    sh:property [
+        sh:path dct:rights ;
+        sh:name "Rights statement" ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:pattern "\\S" ;
+        sh:order 8 ;
+        dash:editor dash:TextAreaEditor ;
+        sh:group :Section1Group
+    ] .
