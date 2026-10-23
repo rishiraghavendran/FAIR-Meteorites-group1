@@ -10,50 +10,85 @@
 @prefix ont: <https://w3id.org/FAIR-course-UT/2026/group01/ont#> .
 
 :Section1Group
-  a sh:PropertyGroup ;
-  rdfs:label "Section 1" ;
-  sh:order 0 .
+    a sh:PropertyGroup ;
+    rdfs:label "Section 1" ;
+    sh:order 0 .
 
 ont:DistributionShape
-  a sh:NodeShape ;
-  rdfs:label "Meteorite Distribution Schema" ;
-  dct:description "Metadata schema for the CSV and RDF distributions of the meteorite dataset." ;
-  sh:targetClass dcat:Distribution ;
-  sh:property [
-    sh:path dct:title ;
-    sh:name "Title" ;
-    sh:nodeKind sh:Literal ;
-    sh:datatype xsd:string ;
-    sh:minCount 1 ;
-    sh:order 0 ;
-    dash:editor dash:TextFieldEditor ;
-    sh:group :Section1Group
-  ] ;
-  sh:property [
-    sh:path dcat:downloadURL ;
-    sh:name "Download URL" ;
-    sh:nodeKind sh:IRI ;
-    sh:minCount 1 ;
-    sh:pattern "^https://w3id\\.org/FAIR-course-UT/2026/group01/" ;
-    sh:order 1 ;
-    dash:editor dash:URIEditor ;
-    sh:group :Section1Group
-  ] ;
-  sh:property [
-    sh:path dct:format ;
-    sh:name "Format" ;
-    sh:nodeKind sh:Literal ;
-    sh:datatype xsd:string ;
-    sh:minCount 1 ;
-    sh:order 2 ;
-    dash:editor dash:TextFieldEditor ;
-    sh:group :Section1Group
-  ] ;
-  sh:property [
-    sh:path dct:license ;
-    sh:name "License" ;
-    sh:nodeKind sh:IRI ;
-    sh:order 3 ;
-    dash:editor dash:URIEditor ;
-    sh:group :Section1Group
-  ] .
+    a sh:NodeShape ;
+    rdfs:label "Meteorite Distribution Schema" ;
+    dct:description "Metadata schema for the CSV and RDF distributions of the meteorite dataset." ;
+    sh:targetClass dcat:Distribution ;
+
+    # Require either a licence IRI or a non-empty rights statement.
+    sh:or (
+        [
+            sh:property [
+                sh:path dct:license ;
+                sh:minCount 1 ;
+                sh:nodeKind sh:IRI
+            ]
+        ]
+        [
+            sh:property [
+                sh:path dct:rights ;
+                sh:minCount 1 ;
+                sh:datatype xsd:string ;
+                sh:pattern "\\S"
+            ]
+        ]
+    ) ;
+
+    sh:property [
+        sh:path dct:title ;
+        sh:name "Title" ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:order 0 ;
+        dash:editor dash:TextFieldEditor ;
+        sh:group :Section1Group
+    ] ;
+
+    sh:property [
+        sh:path dcat:downloadURL ;
+        sh:name "Download URL" ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ;
+        sh:pattern "^https://w3id\\.org/FAIR-course-UT/2026/group01/" ;
+        sh:order 1 ;
+        dash:editor dash:URIEditor ;
+        sh:group :Section1Group
+    ] ;
+
+    sh:property [
+        sh:path dct:format ;
+        sh:name "Format" ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:order 2 ;
+        dash:editor dash:TextFieldEditor ;
+        sh:group :Section1Group
+    ] ;
+
+    # Optional individually; the sh:or rule requires licence or rights.
+    sh:property [
+        sh:path dct:license ;
+        sh:name "License" ;
+        sh:nodeKind sh:IRI ;
+        sh:order 3 ;
+        dash:editor dash:URIEditor ;
+        sh:group :Section1Group
+    ] ;
+
+    sh:property [
+        sh:path dct:rights ;
+        sh:name "Rights statement" ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:pattern "\\S" ;
+        sh:order 4 ;
+        dash:editor dash:TextAreaEditor ;
+        sh:group :Section1Group
+    ] .
