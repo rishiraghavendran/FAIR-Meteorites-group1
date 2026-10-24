@@ -1,5 +1,5 @@
-@prefix data: <https://w3id.org/FAIR-course-UT/2025-2026/group1/data#> .
-@prefix ont: <https://w3id.org/FAIR-course-UT/2025-2026/group1/ont#> .
+@prefix data: <https://w3id.org/FAIR-course-UT/2026/group01/data#> .
+@prefix ont: <https://w3id.org/FAIR-course-UT/2026/group01/ont#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
