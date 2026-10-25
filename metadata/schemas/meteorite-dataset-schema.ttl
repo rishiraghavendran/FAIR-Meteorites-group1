@@ -57,15 +57,14 @@ ont:DatasetShape
     ] ;
 
     # 4. Creator
-    sh:property [
-        sh:path dct:creator ;
-        sh:name "Creator" ;
-        sh:nodeKind sh:IRI ;
-        sh:minCount 1 ;
-        sh:order 3 ;
-        dash:editor dash:URIEditor ;
-        sh:group :Section1Group
-    ] ;
+        sh:property [
+            sh:path dct:creator ;
+            sh:name "Creator" ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:minCount 1 ;
+            sh:order 3 ;
+            sh:group :Section1Group
+        ] ;
 
     # 5. Date Issued
     sh:property [
